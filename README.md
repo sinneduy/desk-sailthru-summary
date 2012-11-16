@@ -11,7 +11,7 @@ Be sure to make the following updates:
 
 3) update example.desk.com in getdesk.rb (there are 2 instances of this)
 
-4) update everyoneweekly.rb to the appropriate vars, email, and template
+4) update summary.rb to the appropriate vars, email, and template
 
 5) utilize presponse as a check for testing, but you should remove in production (and/or change to logging)
 
