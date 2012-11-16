@@ -1,0 +1,33 @@
+{count = 0}
+{average = 0}
+{foreach desk.results as d}
+{if contains(d.case.case_status_type, 'closed')}
+{count = count + 1}
+{else}
+{average = time(substr(d.case.created_at,0,10)+" "+substr(d.case.created_at,11,8)) - time(substr(d.case.first_opened_at,0,10)+" "+substr(d.case.first_opened_at,11,8)) + average}
+{/if}
+{/foreach}
+{total = desk.total - count}
+{average = abs(average/total)}
+<h4>Daily Desk Summary for {desk.results[0].case.user.name}</h4>
+<h4>Average time to open case: {int(average/60)}m, {int(average%60)}s</h4>
+<p>{desk.results[0].case.user.name} worked on {total} cases today. {count} cases were closed today</p>
+<hr/>
+{foreach desk.results as d}
+{if !contains(d.case.case_status_type, 'closed')}
+<p>Case ID: {d.case.id}</p>
+<p>Priority: {d.case.priority}</p>
+<p>Status: {d.case.case_status_type}</p>
+<p>Subject: {d.case.subject}</p>
+<p>Description: {d.case.description}</p>
+<p>Preview: {d.case.preview}</p>
+<p>Labels: {d.case.labels}</p>
+<p>Created: {substr(d.case.created_at,5,2)}/{substr(d.case.created_at,8,2)}/{substr(d.case.created_at,0,4)}, {substr(d.case.created_at,11,8)}</p>
+<p>First Opened: {substr(d.case.first_opened_at,5,2)}/{substr(d.case.first_opened_at,8,2)}/{substr(d.case.first_opened_at,0,4)}, {substr(d.case.first_opened_at,11,8)}</p>
+<p>Last Updated: {substr(d.case.updated_at,5,2)}/{substr(d.case.updated_at,8,2)}/{substr(d.case.updated_at,0,4)}, {substr(d.case.updated_at,11,8)}</p>
+<p>Phone/Email: {d.case.channel}</p>
+<hr/>
+{/if}
+{/foreach}
+<p><a href={optout_confirm_url}>Don't you dare opt out of my emails! Or else!</a></p>
+</body>
