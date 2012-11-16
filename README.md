@@ -7,7 +7,7 @@ Be sure to make the following updates:
 
 1) update sail.rb with your api key/secret
 
-2) install twurl (gem install twurl)
+2) install twurl (gem install twurl), sailthru (gem install sailthru) and json (gem install json)
 
 3) update example.desk.com in getdesk.rb (there are 2 instances of this)
 
