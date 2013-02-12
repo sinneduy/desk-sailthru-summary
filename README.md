@@ -15,4 +15,4 @@ Be sure to make the following updates:
 
 5) utilize presponse as a check for testing, but you should remove in production (and/or change to logging)
 
-6) consider using the sailthrutemplate provided - averages time to open for each user as well as removes closed cases from the summary
+6) consider using the sailthrutemplate provided in Sailthru - averages time to open for each user as well as removes closed cases from the summary
