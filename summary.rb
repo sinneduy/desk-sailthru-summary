@@ -3,15 +3,11 @@ require 'rubygems'
 require File.join File.dirname(__FILE__), 'getdesk'
 require File.join File.dirname(__FILE__), 'sail'
 
-nameOfAgent = desk("nameOfAgent", "timePeriod")
-  #note that "nameOfAgent" (the string, not the var name) should have the first letter capitalized, ie. "Dennis"
-vars = {'nameOfAgent' => nameOfAgent}
+def sendSummary(nameOfAgent, timePeriod, email, template)
+  data = desk(nameOfAgent, timePeriod)
+  vars = {'desk' => data}
+  sresponse = sailthru.send(template, email, vars)
+  return sresponse
+end
 
-email = "example@example.com"
-template = "Name of Template in Sailthru"
-
-
-sresponse = sailthru.send(template, email, vars)
-p sresponse
-
-
+# note that nameOfAgent is case sensitive in Desk()
