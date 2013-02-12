@@ -11,4 +11,4 @@ Be sure to make the following updates:
 
 3) update host in desk()
 
-4) consider using the sailthrutemplate provided in Sailthru - averages time to open for each user as well as removes closed cases from the summary
+4) consider using sailthrutemplate in Sailthru - averages time to open for each user and removes closed cases from the summary in zephyr
