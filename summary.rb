@@ -4,7 +4,7 @@ require File.join File.dirname(__FILE__), 'getdesk'
 require File.join File.dirname(__FILE__), 'sail'
 
 nameOfAgent = desk("nameOfAgent", "timePeriod")
-  #note that nameOfAgent should have the first letter capitalized, ie. "Dennis"
+  #note that "nameOfAgent" (the string, not the var name) should have the first letter capitalized, ie. "Dennis"
 vars = {'nameOfAgent' => nameOfAgent}
 
 email = "example@example.com"
