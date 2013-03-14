@@ -10,7 +10,8 @@ def sailthru
 end
 
 
-def desk(user, time, host = example)
+def desk(user, time)
+   host = example
    response = `twurl --host #{host}.desk.com "/api/v1/cases.json?assigned_user=#{user}&updated=#{time}&count=100"`
     jresponse = JSON.parse(response)
     if jresponse['count'] > jresponse['total']
