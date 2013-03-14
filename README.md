@@ -1,4 +1,4 @@
-desksum
+Desk -> Sailthru Summary
 =======
 
 Use it to send a summary from desk.com (formerly assistly) with sailthru and twurl
